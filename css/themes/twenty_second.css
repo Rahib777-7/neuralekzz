@@ -1,0 +1,17 @@
+:root {
+	--twentysecond-1: #15324f;
+	--background: linear-gradient(transparent, 80%, #000000), linear-gradient(45deg, black 10%, var(--twentysecond-1) 10%, var(--twentysecond-1) 20%, black 20%, black 23%, var(--twentysecond-1) 23%, var(--twentysecond-1) 33%, black 33%);
+	--color-1: #0d0d0d;
+	--color-2: #2a547e;
+	--color-3: #275f97;
+	--color-4: #244c74;
+	--color-modifier: rgba(0, 0, 0, 0.1);
+	--color-modifier-2: rgba(255, 255, 255, 0.1);
+	--link: #aaaaff;
+	--text: white;
+	--font-size: 30px;
+	--font-family: Helvetica, Arial, sans-serif;
+	--font-variant: normal;
+	--background-transform: none;
+	--background-filter: none;
+}

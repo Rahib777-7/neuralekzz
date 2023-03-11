@@ -1,0 +1,43 @@
+body {
+	background: var(--background);
+	color: var(--text);
+	background-attachment: fixed;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+section {
+	width: calc(120px + 4vw);
+	height: calc(120px + 4vw);
+	background-color: var(--color-2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(var(--font-size) * 1.2);
+	border-radius: 20px;
+	box-shadow: inset -6px -6px 10px rgba(0, 0, 0, 0.3), 3px 3px 10px rgba(0, 0, 0, 0.3);
+	transition: transform 0.25s, font-size 0.25s;
+	margin: 10px;
+}
+
+@media (hover: hover) {
+	section:hover {
+		font-size: calc(var(--font-size) * 1.3);
+		transform: scale(1.1);
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.container a {
+	color: var(--color);
+	text-decoration: none;
+}

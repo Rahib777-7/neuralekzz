@@ -1,0 +1,66 @@
+body {
+	background: var(--background);
+	color: var(--text);
+	background-attachment: fixed;
+	font-family: var(--font-family);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.container2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1000px;
+	height: fit-content;
+	margin-top: 50px;
+	padding: 20px;
+	background-color: var(--color-modifier-2);
+	flex-direction: column;
+	text-align: center;
+}
+.title {
+	font-size: calc(var(--font-size) * 1.25);
+	display: block;
+	margin-bottom: 20px;
+}
+section {
+	background-color: var(--color-modifier-2);
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px 0px;
+}
+input {
+	background-color: var(--color-modifier);
+	border: none;
+	margin-bottom: 10px;
+	font-size: calc(var(--font-size) * 0.75);
+	color: var(--text);
+}
+button {
+	background-color: var(--color-modifier);
+	font-size: calc(var(--font-size) * 0.85);
+	color: var(--text);
+	border: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+label {
+	font-size: calc(var(--font-size) * 0.75);
+}
+button:hover {
+	background-color: var(--color-modifier);
+	box-shadow: inset 1000px 1000px var(--color-modifier), inset 1000px 1000px var(--color-modifier);
+	outline: 1px solid var(--text);
+}
+button:active {
+	transform: scale(0.9);
+}

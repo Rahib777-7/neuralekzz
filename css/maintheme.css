@@ -1,0 +1,19 @@
+body {
+	color: var(--text);
+	font-family: var(--font-family);
+	font-variant: var(--font-variant);
+	overflow-x: hidden;
+}
+.bg {
+	background: var(--background);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -2147000000;
+	margin: -8px;
+	filter: var(--background-filter);
+	transform: var(--background-transform);
+}
+a {
+	color: var(--link);
+}

@@ -1,0 +1,16 @@
+:root {
+	--background: radial-gradient(circle at 50%, transparent 15%, black), repeating-linear-gradient(22.5deg, transparent 0%, transparent 2.5%, #330000 10%, #330000 20%, transparent 22.5%), black;
+	--color-1: #1d0808;
+	--color-2: #660000;
+	--color-3: #880000;
+	--color-4: #440000;
+	--color-modifier: rgba(0, 0, 0, 0.1);
+	--color-modifier-2: rgba(255, 255, 255, 0.1);
+	--text: white;
+	--link: #bbbbff;
+	--font-size: 30px;
+	--font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	--font-variant: none;
+	--background-transform: none;
+	--background-filter: none;
+}

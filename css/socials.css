@@ -1,0 +1,18 @@
+.icon {
+	width: 150px;
+	height: auto;
+	margin: 10px;
+}
+.socials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.socials2 {
+	background-color: var(--color-modifier-2);
+	height: 175px;
+	display: flex;
+	align-items: center;
+	padding: 30px;
+}

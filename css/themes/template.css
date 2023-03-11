@@ -1,0 +1,16 @@
+:root {
+	--background: red;
+	--color-1: #ffffff;
+	--color-2: yellow;
+	--color-3: purple;
+	--color-4: rgb(20, 200, 90);
+	--color-modifier: rgba(0, 0, 0, 0.1);
+	--color-modifier-2: rgba(255, 255, 255, 0.1);
+	--text: black;
+	--link: #aaffaa;
+	--font-size: 30px;
+	--font-family: Helvetica, Arial, sans-serif;
+	--font-variant: normal;
+	--background-transform: none;
+	--background-filter: none;
+}

@@ -1,0 +1,16 @@
+body {
+	background: var(--background);
+	color: var(--text);
+	background-attachment: fixed;
+}
+ruffle-player {
+	position: absolute;
+	background: var(--background);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}

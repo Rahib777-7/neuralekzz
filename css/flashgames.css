@@ -1,0 +1,71 @@
+body {
+	background: var(--background);
+	color: var(--text);
+	background-attachment: fixed;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+.container-games {
+	background-color: var(--color-modifier-2);
+	width: 1000px;
+	height: fit-content;
+	font-size: var(--font-size);
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	margin-top: 50px;
+	padding: 20px;
+	font-family: var(--font-family);
+	font-variant: var(--font-variant);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+section img {
+	width: 110px;
+	height: 110px;
+}
+section {
+	padding-top: 10px;
+	margin: 10px 10px;
+	height: 200px;
+	width: 150px;
+	display: inline-block;
+	background-color: var(--color-2);
+	box-shadow: inset 1000px 1000px var(--color-modifier), inset 4px -4px var(--color-modifier);
+	border-radius: 20px;
+	position: relative;
+}
+.title {
+	font-size: calc(var(--font-size) * 0.75);
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+}
+.dropdown {
+	width: 150px;
+	height: 45px;
+	padding-top: 15px;
+	background-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 150px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	opacity: 0;
+	transition: opacity 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+}
+section:hover .dropdown {
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
+	display: block;
+	opacity: 1;
+}
+a {
+	color: var(--text);
+	text-decoration: none;
+}
+.version {
+	display: inline;
+	font-size: calc(var(--font-size) * 0.5);
+}
