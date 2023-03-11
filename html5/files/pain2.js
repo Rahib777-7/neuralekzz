@@ -1,49 +1,26 @@
 let Game = document.createElement("div");
 const userCDN = localStorage.getItem("cdn");
 
-function replaceSingular(html) {
-	let fixedHTML = html;
-	fixedHTML = fixedHTML.replace("<head>", '<header class="neuralekzz">');
-	fixedHTML = fixedHTML.replace("</head>", "</header>");
-	fixedHTML = fixedHTML.replace("<body>", '<main class="neuralekzz">');
-	fixedHTML = fixedHTML.replace("</body>", "</main>");
-	return fixedHTML;
-}
-
-function fixFetches(gameObject) {}
-
-function addGame(game) {
-	const body = game.querySelector("main.neuralekzz");
-	const head = game.querySelector("header.neuralekzz");
-
-	console.log(body.outerHTML);
-	console.log(head.outerHTML);
-	console.log(body);
-	console.log(head);
-	bodyItems = body.children;
-	headItems = head.children;
-	scripts = game.querySelectorAll("script");
-
-	for (script of scripts) {
-		newScript = document.createElement("script");
-		newScript.innerHTML = script.innerHTML;
-		for (attribute of script.attributes) {
-			newScript.setAttribute(attribute.name, attribute.value);
+let htmlDoc;
+let scripts;
+async function createGame(html) {
+	scripts = [];
+	let parser = new DOMParser();
+	let params = new URLSearchParams(window.location.search);
+	htmlDoc = parser.parseFromString(html, "text/html");
+	for (let elem of htmlDoc.querySelectorAll("[src],[href]")) {
+		if (elem.tagName.toLowerCase() != "a" && elem.attributes.src.value.search(new RegExp(`^${userCDN}.*`)) === -1) {
+			let script = await fetch(`${userCDN}/html/${params.get("game")}/` + elem.attributes.src.value);
+			let script2 = await script.text();
+			elem.remove();
+			scripts.push(script2);
 		}
-		script.replaceWith(newScript);
 	}
-	for (item of bodyItems) {
-		document.body.appendChild(item);
+	document.head.replaceWith(htmlDoc.head);
+	document.body.replaceWith(htmlDoc.body);
+	for (let i of scripts) {
+		eval(i);
 	}
-	for (item of headItems) {
-		document.head.appendChild(item);
-	}
-}
-
-function createGame(html) {
-	fixedHTML = replaceSingular(html);
-	Game.innerHTML = fixedHTML;
-	addGame(Game);
 }
 
 fetch(`${userCDN}/html/test/index.html`)

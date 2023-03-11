@@ -39,5 +39,8 @@ switch (type) {
 			fetch(`${userCDN}/games.json`)
 				.then((data) => data.json())
 				.then((htmlgames) => handleHTML(htmlgames.other.html));
+		} else {
+			container = document.querySelector(".container");
+			container.innerHTML = '<iframe class="game" src="game.html?game=test" sandbox="allow-scripts allow-same-origin"></iframe>';
 		}
 }
