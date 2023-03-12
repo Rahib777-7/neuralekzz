@@ -88,7 +88,8 @@ function alertToNoCDN() {
 }
 
 window.onload = function () {
-	fetch("/neuralekzz.json")
+	dataFileLink = document.body.classList.contains("index") ? "neuralekzz.json" : "../neuralekzz.json";
+	fetch(dataFileLink)
 		.then((response) => response.json())
 		.then((data) => {
 			siteData = data;
