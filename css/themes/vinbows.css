@@ -1,5 +1,5 @@
 :root {
-	--background: url("/images/xp.jpg");
+	--background: url("../images/xp.jpg");
 	--color-1: #bbbbbb;
 	--color-2: #d4d4d4;
 	--color-3: #dddddd;
@@ -9,7 +9,7 @@
 	--text: black;
 	--link: #000088;
 	--font-size: 30px;
-	--font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
+	--font-family: sans-serif;
 	--font-variant: normal;
 	--background-transform: none;
 	--background-filter: none;

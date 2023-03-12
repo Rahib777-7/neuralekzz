@@ -10,10 +10,9 @@ String.prototype.toTitleCase = function () {
 
 const cloakTitle = localStorage.getItem("title");
 const cloakLink = localStorage.getItem("favicon");
-
 const cdns = ["https://rawcdn.githack.com/omnitechnicity/neuralekzz-assets/main", "https://raw.githubusercontent.com/omnitechnicity/neuralekzz-assets/main", "https://cdn.statically.io/gh/omnitechnicity/neuralekzz-assets/main"];
 
-var siteData;
+let siteData;
 
 function validateData(data) {
 	if (data.themes.includes(data.theme) === false) {
@@ -89,7 +88,7 @@ function alertToNoCDN() {
 }
 
 window.onload = function () {
-	fetch("../neuralekzz.json")
+	fetch("/neuralekzz.json")
 		.then((response) => response.json())
 		.then((data) => {
 			siteData = data;
