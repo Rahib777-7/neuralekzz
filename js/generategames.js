@@ -2,6 +2,7 @@ let type = document.body.classList[0];
 
 function handleFlash(games) {
 	const container = document.querySelector(".container-games");
+	console.log(games);
 	for (game of games) {
 		let section = document.createElement("section");
 		let icon = document.createElement("img");
@@ -9,11 +10,11 @@ function handleFlash(games) {
 		let dropdown = document.createElement("div");
 		dropdown.classList.add("dropdown");
 		let droplink = document.createElement("a");
-		droplink.href = `?game=${game[0]}`;
+		droplink.href = `?game=${game["id"]}`;
 		droplink.innerHTML = "Play";
 		dropdown.appendChild(droplink);
 		title.classList.add("title");
-		title.innerHTML = game[1];
+		title.innerHTML = game["name"];
 		icon.src = "../images/neuralekzz.png";
 		section.appendChild(icon);
 		section.appendChild(title);
