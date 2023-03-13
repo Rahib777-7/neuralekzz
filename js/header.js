@@ -10,7 +10,7 @@ String.prototype.toTitleCase = function () {
 
 const cloakTitle = localStorage.getItem("title");
 const cloakLink = localStorage.getItem("favicon");
-const cdns = ["https://rawcdn.githack.com/omnitechnicity/neuralekzz-assets/main", "https://raw.githubusercontent.com/omnitechnicity/neuralekzz-assets/main", "https://cdn.statically.io/gh/omnitechnicity/neuralekzz-assets/main"];
+const cdns = ["https://raw.githack.com/omnitechnicity/neuralekzz-assets/main", "https://rawcdn.githack.com/omnitechnicity/neuralekzz-assets/main", "https://raw.githubusercontent.com/omnitechnicity/neuralekzz-assets/main", "https://cdn.statically.io/gh/omnitechnicity/neuralekzz-assets/main"];
 
 let siteData;
 
