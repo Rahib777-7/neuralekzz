@@ -31,7 +31,7 @@ async function createGame(html) {
 }
 
 if (params.has("game")) {
-	fetch(`${userCDN}/html/test/index.html`)
+	fetch(`${userCDN}/html/${params.get("game")}/index.html`)
 		.then((text) => text.text())
 		.then((html) => createGame(html));
 } else {
