@@ -15,18 +15,27 @@ async function createGame(html) {
 	scripts = [];
 	let parser = new DOMParser();
 	htmlDoc = parser.parseFromString(html, "text/html");
-	for (let elem of htmlDoc.querySelectorAll("[src],[href]")) {
-		if (elem.tagName.toLowerCase() != "a" && elem.attributes.src.value.search(new RegExp(`^${userCDN}.*`)) === -1) {
-			let script = await fetch(`${userCDN}/html/${params.get("game")}/` + elem.attributes.src.value);
-			let script2 = await script.text();
-			elem.remove();
-			scripts.push(script2);
+	for (let elem of htmlDoc.querySelectorAll("script[type^=text], script:not([type])")) {
+		if (elem.hasAttribute("src")) {
+			if (new RegExp("^(http|https|data)://.").test(elem.attributes.src.value)) {
+				let script = await fetch(elem.attributes.src.value);
+				let script2 = await script.text();
+				elem.remove();
+				scripts.push(script2);
+			} else {
+				let script = await fetch(`${userCDN}/html/${params.get("game")}/` + elem.attributes.src.value);
+				let script2 = await script.text();
+				elem.remove();
+				scripts.push(script2);
+			}
+		} else {
+			scripts.push(elem.innerHTML);
 		}
 	}
 	document.head.replaceWith(htmlDoc.head);
 	document.body.replaceWith(htmlDoc.body);
 	for (let i of scripts) {
-		eval(i);
+		eval.call(window, i);
 	}
 }
 
