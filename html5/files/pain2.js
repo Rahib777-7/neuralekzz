@@ -1,7 +1,7 @@
 const userCDN = localStorage.getItem("cdn");
 
 let htmlDoc;
-let scripts;
+let scripts = [];
 let params = new URLSearchParams(window.location.search);
 
 function error(text) {
@@ -12,7 +12,6 @@ function error(text) {
 }
 
 async function createGame(html) {
-	scripts = [];
 	let parser = new DOMParser();
 	htmlDoc = parser.parseFromString(html, "text/html");
 	for (let elem of htmlDoc.querySelectorAll("script[type^=text], script:not([type])")) {
@@ -34,8 +33,10 @@ async function createGame(html) {
 	}
 	document.head.replaceWith(htmlDoc.head);
 	document.body.replaceWith(htmlDoc.body);
-	for (let i of scripts) {
-		eval.call(window, i);
+	for (script of scripts) {
+		createdScript = document.createElement("script");
+		createdScript.text = script;
+		document.head.appendChild(createdScript).parentNode.removeChild(createdScript); /* Thanks JQuery! */
 	}
 }
 
