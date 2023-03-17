@@ -1,15 +1,15 @@
 :root {
 	--background: url("../images/spirograph.png");
 	--color-1: #c6c6c6;
-	--color-2: #dedede;
+	--color-2: #dedede92;
 	--color-3: #efefef;
-	--color-4: rgb(12, 120, 53);
+	--color-4: rgb(55, 178, 102);
 	--color-modifier: rgba(0, 0, 0, 0.2);
 	--color-modifier-2: rgba(255, 255, 255, 0.2);
-	--text: black;
+	--text: white;
 	--link: #19852a;
 	--font-size: 25px;
-	--font-family: "courier-std", courier, monospace;
+	--font-family: monospace, Courier;
 	--font-variant: normal;
 	--background-transform: none;
 	--background-filter: blur(6px);

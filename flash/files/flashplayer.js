@@ -1,7 +1,7 @@
 let game;
 function setTitle(gamedata, gametype) {
 	const flashgames = gamedata.flash;
-	gametitle = flashgames.find((gamer) => gamer[0] === gametype)[1];
+	gametitle = flashgames.find((gamer) => gamer.id === gametype).name;
 	let title = document.querySelector("title");
 	title.innerHTML = `Neuralekzz | ${gametitle}`;
 }
@@ -30,6 +30,6 @@ if (new URLSearchParams(window.location.search).has("game")) {
 			.then((data) => data.json())
 			.then((gamed) => setTitle(gamed, game));
 	}
-	style = document.querySelector('link[href="../css/flashgames.css"]');
+	style = document.querySelector('link[href="../css/gameslist.css"]');
 	style.href = "../css/player.css";
 }

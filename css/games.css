@@ -20,7 +20,7 @@ section {
 	justify-content: center;
 	font-size: calc(var(--font-size) * 1.2);
 	border-radius: 20px;
-	box-shadow: inset -6px -6px 10px rgba(0, 0, 0, 0.3), 3px 3px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 1000px 1000px var(--color-modifier), inset 4px -4px var(--color-modifier);
 	transition: transform 0.25s, font-size 0.25s;
 	margin: 10px;
 }

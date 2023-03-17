@@ -1,4 +1,5 @@
 let type = document.body.classList[0];
+let params = new URLSearchParams(window.location.search);
 
 function handleFlash(games) {
 	const container = document.querySelector(".container-games");
@@ -29,14 +30,14 @@ function handleHTML(games) {
 
 switch (type) {
 	case "flash":
-		if (!new URLSearchParams(window.location.search).has("game")) {
+		if (!params.has("game")) {
 			fetch(`${userCDN}/games.json`)
 				.then((data) => data.json())
 				.then((flashgames) => handleFlash(flashgames.flash));
 		}
 		break;
 	case "html":
-		if (!new URLSearchParams(window.location.search).has("game")) {
+		if (!params.has("game")) {
 			fetch(`${userCDN}/games.json`)
 				.then((data) => data.json())
 				.then((htmlgames) => handleHTML(htmlgames.other.html));

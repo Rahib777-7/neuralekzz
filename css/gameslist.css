@@ -61,7 +61,7 @@ section:hover .dropdown {
 	display: block;
 	opacity: 1;
 }
-a {
+div.dropdown a {
 	color: var(--text);
 	text-decoration: none;
 }
