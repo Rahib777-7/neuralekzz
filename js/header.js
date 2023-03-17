@@ -7,9 +7,6 @@ String.prototype.toTitleCase = function () {
 };
 
 // Site loading
-
-const cloakTitle = localStorage.getItem("title");
-const cloakLink = localStorage.getItem("favicon");
 const cdns = ["https://raw.githack.com/omnitechnicity/neuralekzz-assets/main", "https://rawcdn.githack.com/omnitechnicity/neuralekzz-assets/main", "https://raw.githubusercontent.com/omnitechnicity/neuralekzz-assets/main", "https://cdn.statically.io/gh/omnitechnicity/neuralekzz-assets/main"];
 
 let siteData;
@@ -26,27 +23,18 @@ function validateData(data) {
 	return false;
 }
 
-function navbarLoc() {
-	let navbar = document.querySelector(".header");
-	let navbarLocation = localStorage.getItem("navbarlocation");
-	switch (navbarLocation) {
-		case "top":
-			navbar.style.top = "0px";
-			break;
-		case "bottom":
-			navbar.style.top = "calc(100vh - 44px)";
-			break;
-		case null:
-			break;
-	}
-}
-
-function handleData(data) {
+function sitePreferences(data) {
 	validateData(data);
-	themeData = document.createElement("link");
-	themeData.rel = "stylesheet";
+	const navbar = document.querySelector(".header");
+	const navbarLocation = localStorage.getItem("navbarlocation");
+	const themeData = document.createElement("link");
+	const cloakLink = localStorage.getItem("favicon");
+	const cloakTitle = localStorage.getItem("title");
+	const favicon = document.querySelector('link[rel="icon"]');
+	const documentTitle = document.querySelector("title");
 	let theme;
-	if (localStorage.getItem("theme") == null) {
+	themeData.rel = "stylesheet";
+	if (localStorage.getItem("theme")) {
 		theme = siteData.theme;
 	} else {
 		theme = localStorage.getItem("theme");
@@ -60,15 +48,22 @@ function handleData(data) {
 	if (document.body.classList.contains("settings")) {
 		settingsLoad();
 	}
-	navbarLoc();
-	cloakTitle && cloakLink ? settabcloak(cloakTitle, cloakLink) : console.log("No title/favicon found");
-}
-
-function settabcloak(title, link) {
-	const favicon = document.querySelector('link[rel="icon"]');
-	const documentTitle = document.querySelector("title");
-	documentTitle.innerHTML = title;
-	favicon.href = cloakLink;
+	switch (navbarLocation) {
+		case "top":
+			navbar.style.top = "0px";
+			break;
+		case "bottom":
+			navbar.style.top = "calc(100vh - 44px)";
+			break;
+		case null:
+			break;
+	}
+	if (cloakTitle) {
+		documentTitle.innerHTML = cloakTitle;
+	}
+	if (cloakLink) {
+		favicon.href = cloakLink;
+	}
 }
 
 async function getCDNs() {
@@ -80,11 +75,11 @@ async function getCDNs() {
 			return;
 		}
 	}
-	alertToNoCDN();
+	alert("No CDN found!");
 }
 
-function alertToNoCDN() {
-	console.log("No CDN found!");
+function popupAlert() {
+	// TODO: Add a popup warning and just in general a popup function
 }
 
 window.onload = function () {
@@ -93,7 +88,7 @@ window.onload = function () {
 		.then((response) => response.json())
 		.then((data) => {
 			siteData = data;
-			handleData(data);
+			sitePreferences(data);
 		});
 };
 

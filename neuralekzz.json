@@ -1,14 +1,8 @@
 {
-    "games": {
-        "flash": true,
-        "html": true,
-        "unity": true,
-        "emulated": true
-    },
     "links": {
         "github": "https://github.com/Omnitechnicity/neuralekzz",
         "issue": "https://github.com/Omnitechnicity/neuralekzz/issues/new"
     },
-    "themes": ["dark", "light", "twenty_second", "hackerman", "red_beam", "establishment_imprisonment", "vinbows"],
+    "themes": ["dark", "light", "twenty_second", "hackerman", "red_beam", "vinbows"],
     "theme": "twenty_second"
 }
