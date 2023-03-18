@@ -58,10 +58,10 @@ function sitePreferences(data) {
 		case null:
 			break;
 	}
-	if (cloakTitle === null) {
+	if (cloakTitle !== null) {
 		documentTitle.innerHTML = cloakTitle;
 	}
-	if (cloakLink === null) {
+	if (cloakLink !== null) {
 		favicon.href = cloakLink;
 	}
 }
