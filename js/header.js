@@ -34,7 +34,7 @@ function sitePreferences(data) {
 	const documentTitle = document.querySelector("title");
 	let theme;
 	themeData.rel = "stylesheet";
-	if (localStorage.getItem("theme")) {
+	if (localStorage.getItem("theme") === null) {
 		theme = siteData.theme;
 	} else {
 		theme = localStorage.getItem("theme");
@@ -58,10 +58,10 @@ function sitePreferences(data) {
 		case null:
 			break;
 	}
-	if (cloakTitle) {
+	if (cloakTitle === null) {
 		documentTitle.innerHTML = cloakTitle;
 	}
-	if (cloakLink) {
+	if (cloakLink === null) {
 		favicon.href = cloakLink;
 	}
 }
