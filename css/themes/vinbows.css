@@ -26,3 +26,9 @@
 ruffle-player {
 	border-top: 33px solid var(--color-4);
 }
+select {
+	color: white;
+}
+option {
+	color: white;
+}
