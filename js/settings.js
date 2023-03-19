@@ -14,7 +14,7 @@ function settabcloakButton() {
 		favicon.href = `https://www.google.com/s2/favicons?domain=${link}`;
 	}
 	if (title === "") {
-		localStorage.setItem("title", undefined);
+		localStorage.setItem("title", null);
 	} else {
 		localStorage.setItem("title", title);
 		documentTitle.innerHTML = title;
